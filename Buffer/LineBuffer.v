@@ -18,8 +18,8 @@ module LineBuffer
 
 	wire	[`n-2:0]ShiftData;
 	
-	assign ShiftData[`n-2:1] = LineData[`n-3:0];
-	assign ShiftData[0] = Data;
+	assign ShiftData[`n-3:0] = LineData[`n-2:1];
+	assign ShiftData[`n-2] = Data;
 
 	generate
 		genvar i;
