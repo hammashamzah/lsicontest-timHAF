@@ -15,6 +15,8 @@ module RAM
 );
 
 	reg	Buffer[0:`l-1];
+	reg	[`wd-1:0]AddrReg;
+	reg	WriteEnableReg;
 	
 	// Init
 	initial
@@ -26,8 +28,11 @@ module RAM
 	
 	always @(posedge Clock)
 	begin
-		if(WriteEnable)
-			Buffer[Addr] <= DataIn;
+		AddrReg <= Addr;
+		WriteEnableReg <= WriteEnable;
+		
+		if(WriteEnableReg)
+			Buffer[AddrReg] <= DataIn;
 		
 		DataOut <= Buffer[Addr];
 	end

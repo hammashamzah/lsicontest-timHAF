@@ -41,7 +41,7 @@ module LineBufferTestbench();
 		#4
 		WrEn = 0;
 		
-		#4
+		#8
 		WrEn = 1;
 		addr = 5;
 		data_in = 1;
@@ -49,7 +49,7 @@ module LineBufferTestbench();
 		#4
 		WrEn = 0;
 		
-		#4
+		#8
 		WrEn = 1;
 		addr = 0;
 		data_in = 0;
