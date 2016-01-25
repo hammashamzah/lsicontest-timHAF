@@ -3,7 +3,6 @@
 
 module RAM
 #(
-	parameter AddrWidth = 10,
 	parameter ImageWidth = 640
 )
 (
@@ -13,6 +12,8 @@ module RAM
 	input	[`wd-1:0]Addr,
 	output reg	DataOut
 );
+
+	localparam AddrWidth = $clog2(ImageWidth);
 
 	reg	Buffer[0:`l-1];
 	reg	[`wd-1:0]AddrReg;
