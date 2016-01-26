@@ -8,14 +8,20 @@ module LineBuffer
 	parameter WindowSize = 3
 )
 (
-	input	Clock,
-	input	WriteEnable,
-	input	[`wd-1:0]Addr,
-	input	Data,
-	output	[`n-2:0]LineData
+	Clock,
+	WriteEnable,
+	Addr,
+	Data,
+	LineData
 );
 
-	localparam AddrWidth = $clog2(ImageWidth);
+	localparam AddrWidth = $clog2(ImageWidth + 1);
+	
+	input	Clock;
+	input	WriteEnable;
+	input	[`wd-1:0]Addr;
+	input	Data;
+	output	[`n-2:0]LineData;
 
 	wire	[`n-2:0]ShiftData;
 	

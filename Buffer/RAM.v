@@ -6,14 +6,20 @@ module RAM
 	parameter ImageWidth = 640
 )
 (
-	input	Clock,
-	input	WriteEnable,
-	input	DataIn,
-	input	[`wd-1:0]Addr,
-	output reg	DataOut
+	Clock,
+	WriteEnable,
+	DataIn,
+	Addr,
+	DataOut
 );
 
-	localparam AddrWidth = $clog2(ImageWidth);
+	localparam AddrWidth = $clog2(ImageWidth + 1);
+	
+	input	Clock;
+	input	WriteEnable;
+	input	DataIn;
+	input	[`wd-1:0]Addr;
+	output reg	DataOut;
 
 	reg	Buffer[0:`l-1];
 	reg	[`wd-1:0]AddrReg;
