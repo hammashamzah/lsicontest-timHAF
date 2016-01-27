@@ -55,7 +55,7 @@ module IntegralBufferTestbench();
 				WE = 1;
 				#4
 				WE = 0;
-				#(2*4)
+				#(3*4)
 				Addr = Addr + 1;
 			end
 		end

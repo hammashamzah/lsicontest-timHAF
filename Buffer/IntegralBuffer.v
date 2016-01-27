@@ -10,7 +10,7 @@ module IntegralBuffer
 #(
 	parameter ImageWidth	= 640,
 	parameter ImageHeight	= 480,
-	parameter WindowSize	= 21
+	parameter WindowSize	= 20
 )
 (
 	Clock,
@@ -136,9 +136,9 @@ module IntegralBuffer
 	end
 	
 	/** BufferReady **/
-	always @(count)
+	always @(count or WriteEnableReg)
 	begin
-		if(count >= (`l * (`n-1)) + (2*`n))
+		if(count >= (`l * (`n-1)) + (2*`n) && !WriteEnableReg)
 			BufferReady <= 1'b1;
 		else
 			BufferReady <= 1'b0;
