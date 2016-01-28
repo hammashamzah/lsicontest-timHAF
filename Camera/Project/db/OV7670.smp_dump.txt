@@ -1,0 +1,21 @@
+
+State Machine - |OV7670Hardware|clockDIV:VGAClock|state
+Name state.00 state.10 state.01 
+state.00 0 0 0 
+state.01 1 0 1 
+state.10 1 1 0 
+
+State Machine - |OV7670Hardware|OV7670Read:OV7670|State
+Name State.101 State.100 State.011 State.010 State.001 State.000 
+State.000 0 0 0 0 0 0 
+State.001 0 0 0 0 1 1 
+State.010 0 0 0 1 0 1 
+State.011 0 0 1 0 0 1 
+State.100 0 1 0 0 0 1 
+State.101 1 0 0 0 0 1 
+
+State Machine - |OV7670Hardware|OV7670Read:OV7670|clockDIV:CamClock|state
+Name state.00 state.10 state.01 
+state.00 0 0 0 
+state.01 1 0 1 
+state.10 1 1 0 
