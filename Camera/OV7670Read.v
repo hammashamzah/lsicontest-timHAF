@@ -1,3 +1,5 @@
+`define FSYS	50_000_000
+
 `define	WAIT_V	0
 `define	WAIT_H	1
 `define READ_CB	2
@@ -9,12 +11,14 @@
 
 module OV7670Read
 (
+	input	Clock,
 	input	PCLK,
 	input	Reset,
 	input	VSYNC,
 	input	HREF,
 	input	[7:0]D,
 	input	[`wdA-1:0]ReadAddr,
+	output	XCLK,
 	output	BufferData
 );
 
@@ -105,7 +109,8 @@ module OV7670Read
 	end
 	
 	/** Buffer 0 **/
-	OV7670RAM Buffer0(	.Clock			(PCLK),
+	OV7670RAM Buffer0(	.WriteClock		(PCLK),
+						.ReadClock		(Clock),
 						.WriteEnable	(WriteBuffer0),
 						.WriteAddr		(Count),
 						.ReadAddr		(ReadAddr),
@@ -114,7 +119,8 @@ module OV7670Read
 					 );
 	
 	/** Buffer 1 **/
-	OV7670RAM Buffer1(	.Clock			(PCLK),
+	OV7670RAM Buffer1(	.WriteClock		(PCLK),
+						.ReadClock		(Clock),
 						.WriteEnable	(WriteBuffer1),
 						.WriteAddr		(Count),
 						.ReadAddr		(ReadAddr),
@@ -157,5 +163,13 @@ module OV7670Read
 	
 	/** Buffer Data Out selector **/
 	assign BufferData = (CurrentBuffer)? BufferData0 : BufferData1;
+	
+	/** Clock Divider **/
+	clockDIV #(	.Divider	(2)
+			  )
+		CamClock(	.reset		(Reset),
+					.clock		(Clock),
+					.newClock	(XCLK)
+				);
 	
 endmodule 

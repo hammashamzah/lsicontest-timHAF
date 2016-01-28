@@ -2,7 +2,8 @@
 
 module OV7670RAM
 (
-	input		Clock,
+	input		WriteClock,
+	input		ReadClock,
 	input		WriteEnable,
 	input		[`wd-1:0]WriteAddr,
 	input		[`wd-1:0]ReadAddr,
@@ -14,16 +15,22 @@ module OV7670RAM
 	
 /*	initial
 	begin
-		integer i;
-		for(i=0; i<307200; i=i+1)
-			RAM[i] <= 0;
+		integer i,j;
+		for(i=0; i<480; i=i+1)
+		begin
+			for(j=0; j<640; j=j+1)
+				RAM[i*640+j] = 0;
+		end
 	end */
 	
-	always @(posedge Clock)
+	always @(posedge WriteClock)
 	begin
 		if(WriteEnable)
 			RAM[WriteAddr] <= DataIn;
-		
+	end
+	
+	always @(posedge ReadClock)
+	begin
 		DataOut <= RAM[ReadAddr];
 	end
 
