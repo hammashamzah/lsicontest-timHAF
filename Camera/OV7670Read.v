@@ -1,4 +1,5 @@
 `define FSYS	50_000_000
+`define FCAM	25_000_000
 
 `define	WAIT_V	0
 `define	WAIT_H	1
@@ -17,6 +18,7 @@ module OV7670Read
 	input	VSYNC,
 	input	HREF,
 	input	[7:0]D,
+	input	Read,
 	input	[`wdA-1:0]ReadAddr,
 	output	XCLK,
 	output	BufferData
@@ -162,7 +164,13 @@ module OV7670Read
 	end
 	
 	/** Buffer Data Out selector **/
-	assign BufferData = (CurrentBuffer)? BufferData0 : BufferData1;
+	reg	CurrentReadBuffer;
+	always @(posedge Clock)
+	begin
+		if(!Read)
+			CurrentReadBuffer <= CurrentBuffer;
+	end
+	assign BufferData = (CurrentReadBuffer)? BufferData0 : BufferData1;
 	
 	/** Clock Divider **/
 	clockDIV #(	.Divider	(2)
