@@ -20,42 +20,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-BRAM
-# storage
-db|ImageScaler_Storage.(1).cnf
-db|ImageScaler_Storage.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-bram.v
-427ca9f0c0e4c8e5dcbfc59a61a22a54
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-BRAM:bram
-}
-# macro_sequence
-
-# end
-# entity
 altsyncram
 # storage
 db|ImageScaler_Storage.(3).cnf
@@ -2697,6 +2661,42 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 
 # end
 # entity
+BRAM
+# storage
+db|ImageScaler_Storage.(1).cnf
+db|ImageScaler_Storage.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+bram.v
+cdfe1837aff41f8976f15cf4ecd280af
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+BRAM:bram
+}
+# macro_sequence
+
+# end
+# entity
 ImageScaler
 # storage
 db|ImageScaler_Storage.(2).cnf
@@ -2708,7 +2708,7 @@ ON
 # case_sensitive
 # source_file
 imagescaler.v
-d8e3a218595a93f185a74e73212a16a7
+88d542bfa7c642c527be6dd0f83eda
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
