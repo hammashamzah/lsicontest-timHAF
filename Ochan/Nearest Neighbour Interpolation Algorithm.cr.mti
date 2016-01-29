@@ -1,0 +1,30 @@
+{C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/BRAM.v} {1 {vlog -work work -nocovercells {C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/BRAM.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module BRAM
+
+Top level modules:
+	BRAM
+
+} {} {}} {C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/tb_ImageScaler.v} {1 {vlog -work work -nocovercells {C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/tb_ImageScaler.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module tb_ImageScaler
+
+Top level modules:
+	tb_ImageScaler
+
+} {} {}} {C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/tb_BRAM.v} {1 {vlog -work work -nocovercells {C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/tb_BRAM.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module tb_BRAM
+
+Top level modules:
+	tb_BRAM
+
+} {} {}} {C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/ImageScaler.v} {2 {vlog -work work -nocovercells {C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/ImageScaler.v}
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module ImageScaler
+** Warning: C:/Users/Fauzan/Documents/LSI/New folder/ImageScaler/ImageScaler.v(94): [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	ImageScaler
+
+} {} {}}

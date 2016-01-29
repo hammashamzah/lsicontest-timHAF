@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at tb_BRAM.v(20): object "wr_en" differs only in case from object "wr_En" in the same scope

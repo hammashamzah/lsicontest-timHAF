@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ImageScaler_Storage">
+		<CBX_INST_ENTRY INSTANCE_NAME="|tb_BRAM|BRAM:bram|altsyncram:RAM_rtl_0" CBX_FILE_NAME="altsyncram_c4h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tb_BRAM|ImageScaler:scaler|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_0gm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tb_BRAM|ImageScaler:scaler|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_38m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|tb_BRAM|ImageScaler:scaler|lpm_mult:Mult0" CBX_FILE_NAME="mult_k8t.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
