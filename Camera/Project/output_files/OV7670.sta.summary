@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'Clock'
+Slack : -8.515
+TNS   : -13940.538
+
+Type  : Slow Model Setup 'CAM_PCLK'
+Slack : -3.320
+TNS   : -6188.401
+
+Type  : Slow Model Setup 'OV7670Read:OV7670|clockDIV:CamClock|state.01'
+Slack : -2.199
+TNS   : -36.100
+
+Type  : Slow Model Hold 'Clock'
+Slack : -2.724
+TNS   : -5.000
+
+Type  : Slow Model Hold 'CAM_PCLK'
+Slack : -0.991
+TNS   : -13.328
+
+Type  : Slow Model Hold 'OV7670Read:OV7670|clockDIV:CamClock|state.01'
+Slack : 0.565
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CAM_PCLK'
+Slack : -1.880
+TNS   : -8490.222
+
+Type  : Slow Model Minimum Pulse Width 'Clock'
+Slack : -1.880
+TNS   : -6781.380
+
+Type  : Slow Model Minimum Pulse Width 'OV7670Read:OV7670|clockDIV:CamClock|state.01'
+Slack : -0.500
+TNS   : -20.000
+
+Type  : Fast Model Setup 'Clock'
+Slack : -3.305
+TNS   : -5179.306
+
+Type  : Fast Model Setup 'CAM_PCLK'
+Slack : -1.457
+TNS   : -1833.989
+
+Type  : Fast Model Setup 'OV7670Read:OV7670|clockDIV:CamClock|state.01'
+Slack : -0.468
+TNS   : -6.153
+
+Type  : Fast Model Hold 'Clock'
+Slack : -1.715
+TNS   : -3.267
+
+Type  : Fast Model Hold 'CAM_PCLK'
+Slack : -0.642
+TNS   : -9.750
+
+Type  : Fast Model Hold 'OV7670Read:OV7670|clockDIV:CamClock|state.01'
+Slack : 0.261
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CAM_PCLK'
+Slack : -1.880
+TNS   : -8490.222
+
+Type  : Fast Model Minimum Pulse Width 'Clock'
+Slack : -1.880
+TNS   : -6781.380
+
+Type  : Fast Model Minimum Pulse Width 'OV7670Read:OV7670|clockDIV:CamClock|state.01'
+Slack : -0.500
+TNS   : -20.000
+
+------------------------------------------------------------

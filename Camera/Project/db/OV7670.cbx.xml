@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="OV7670">
+		<CBX_INST_ENTRY INSTANCE_NAME="|OV7670Hardware|OV7670Read:OV7670|OV7670RAM:Buffer0|altsyncram:RAM_rtl_0" CBX_FILE_NAME="altsyncram_i7d1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|OV7670Hardware|OV7670Read:OV7670|OV7670RAM:Buffer1|altsyncram:RAM_rtl_0" CBX_FILE_NAME="altsyncram_i7d1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
