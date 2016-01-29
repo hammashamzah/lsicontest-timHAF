@@ -34,8 +34,8 @@ module BRAM(
   output reg [18:0] writeAddr;
   
   assign RAM_full = (writeAddr == 307200);
-  assign addr = wr_en? writeAddr : addr_scale;
-  assign finish = (addr_endScale==5'd20);
+	assign addr = wr_en? writeAddr : addr_scale;
+	assign finish = (addr_endScale==5'd20);
 	
 	/** RAM **/
 	always @(posedge clk)
@@ -44,44 +44,38 @@ module BRAM(
 			RAM[addr] <= data_in;
 	end
   
-  /** writeAddr counter **/
-	always@(posedge clk) begin
-		if(rst) begin
-			writeAddr <= 0;
-		end
-		else if( !RAM_full && wr_en )    
-			writeAddr <= writeAddr + 18'd1;
-	end
+   /** writeAddr counter **/
+  always@(posedge clk) begin
+    if(rst) begin
+      writeAddr <= 0;
+    end
+    else if( !RAM_full && wr_en )    
+      writeAddr <= writeAddr + 18'd1;
+  end
  
   /** write output **/
   always @(posedge clk) begin
     if(rst) begin
-		addr_endScale <=0;
-	end
+      addr_endScale <=0;
+  end
     else if(!wr_en) begin
-	  if(endScale && !finish) begin
-		addr_endScale <= addr_endScale+5'd1;
-	  end
+      if(endScale && !finish) begin
+        addr_endScale <= addr_endScale+5'd1;
+      end
     end
   end
   
   always @(posedge clk) begin
-	data_out_reg <= RAM[addr_scale];
+    if(!wr_en) begin
+      data_out_reg <= RAM[addr_scale];
+    end
   end
   
   always @(data_out_reg or endScale or finish) begin
-	if(endScale && !finish)
-		data_out <= 0;
-	else
-		data_out <= data_out_reg;
-  end
-  /*
-  always @(posedge clk) begin
-    if(endScale && !finish) begin
-      addr_endScale <= addr_endScale+5'd1;
+    if(endScale && !finish)
       data_out <= 0;
-    end
+    else
+      data_out <= data_out_reg;
   end
-	*/
- 
+
 endmodule

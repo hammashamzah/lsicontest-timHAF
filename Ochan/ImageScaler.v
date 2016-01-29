@@ -10,7 +10,6 @@ module ImageScaler(
   endScale,
   x,
   y,
-  full,
   wr_En
 );
   input   clk;
@@ -24,7 +23,6 @@ module ImageScaler(
   output  endScale;
   output  [9:0 ]x;
   output  [8:0] y;
-  output full;
   output reg wr_En;
   
   wire  [12:0] scale_factor;
@@ -91,7 +89,7 @@ module ImageScaler(
                               (round_scale==5'd14)? 14'd990:           //1.2^14
                               (round_scale==5'd15)? 14'd838:           //1.2^15
                               (round_scale==5'd16)? 14'd705:            //1.2^16
-                              (round_scale==5'd17)? 14'd591:14'd12200; //1.2^17
+                              (round_scale==5'd17)? 14'd591:10'd12200; //1.2^17
  
 
                   
@@ -102,14 +100,13 @@ module ImageScaler(
   reg [18:0] temp_addr;
   
   assign buffer_full = (addr >= L);
-  assign full = buffer_full;
   assign temp_mult = addr*scale_factor;
   assign temp_addr_scale = temp_mult>>4;
   
   assign addr_request = en? addr : 19'd0;
   assign addr_scale = en? (temp_mult[3]? temp_addr_scale+19'd1:temp_addr_scale): 19'd0;
   
-  assign x = addr_scale % 10'd640;
+  assign x = addr_scale%10'd640;
   assign y = face_found? addr_scale/10'd640:9'd0;
   
   always@(posedge clk) begin
@@ -121,7 +118,7 @@ module ImageScaler(
       if(!limit) begin
         if(!buffer_full | (face_status & !finish)) begin
           addr <= addr + 19'd1;
-          wr_En <= 1;
+          wr_En <= 1'd1;
         end
         else 
           wr_En <= 0;
