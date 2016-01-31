@@ -1,5 +1,5 @@
 EDA Netlist Writer report for OV7670
-Thu Jan 28 21:33:56 2016
+Fri Jan 29 00:33:30 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Jan 28 21:33:56 2016 ;
+; EDA Netlist Writer Status ; Successful - Fri Jan 29 00:33:30 2016 ;
 ; Revision Name             ; OV7670                                ;
 ; Top-level Entity Name     ; OV7670Hardware                        ;
 ; Family                    ; Cyclone II                            ;
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jan 28 21:33:55 2016
+    Info: Processing started: Fri Jan 29 00:33:29 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off OV7670 -c OV7670
 Info (204026): Generated files "OV7670.vo", "OV7670_fast.vo", "OV7670_v.sdo" and "OV7670_v_fast.sdo" in directory "D:/Documents/GitHub/lsicontest-timHAF/Camera/Project/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 424 megabytes
-    Info: Processing ended: Thu Jan 28 21:33:56 2016
+    Info: Peak virtual memory: 418 megabytes
+    Info: Processing ended: Fri Jan 29 00:33:30 2016
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
